@@ -10,17 +10,17 @@
           <h2>{{character.name | slice: 0:15}}</h2>
           <p *ngIf="character.status !== 'unknown'">status: {{character.status}}</p>
           <p *ngIf="character.status === 'unknown'">status is unknown</p>
-          <p *ngIf="character.status !== 'unknown'">species: {{character.species}}</p>
-          <p *ngIf="character.status === 'unknown'">species are unknown</p>
+          <p *ngIf="character.species !== 'unknown'">species: {{character.species}}</p>
+          <p *ngIf="character.species === 'unknown'">species are unknown</p>
           <p *ngIf="character.type !== ''">type: {{character.type}}</p>
           <p *ngIf="character.type === ''">type is unknown</p>
-          <p *ngIf="character.type !== 'unknown'">gender: {{character.gender}}</p>
-          <p *ngIf="character.type === 'unknown'">gender is unknown</p>
+          <p *ngIf="character.gender !== 'unknown'">gender: {{character.gender}}</p>
+          <p *ngIf="character.gender === 'unknown'">gender is unknown</p>
+          <p>episode count: {{ character.episode.length }}</p>
           <p>created: {{character.created | date}}</p>
         </div>
       </div>
     </div>
   </div>
-  <div *ngIf="!characters" class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound"><span>No results...</span></div>
 </div>
-<button [ngClass]="'visible'" *ngIf="showButton" (click)="onScrollTop()" class="btn btn-primary btn-lg mt-3">Return to top</button>
+<button [ngClass]="'visible'" *ngIf="showButton" (click)="onScrollTop()" class="btn btn-dark btn-lg mt-3">Return to top</button>
